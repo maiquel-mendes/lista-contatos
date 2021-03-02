@@ -1,9 +1,9 @@
 const pessoas = [
     {nome: 'maiquel', sobrenome: "mendes", idade: 43},
-    {nome: 'maiquel', sobrenome: "mendes", idade: 43},
+    {nome: 'Marcia', sobrenome: "Silva", idade: 25},
     {nome: 'João', sobrenome: "mendes", idade: 43},
     {nome: 'maiquel', sobrenome: "mendes", idade: 43},
-    {nome: 'maiquel', sobrenome: "mendes", idade: 43},
+    {nome: 'Adriano', sobrenome: "mendes", idade: 80},
     {nome: 'maiquel', sobrenome: "mendes", idade: 43},
     {nome: 'João', sobrenome: "mendes", idade: 43},
     {nome: 'maiquel', sobrenome: "mendes", idade: 43},
@@ -12,6 +12,13 @@ const pessoas = [
 console.log(pessoas[0].nome)
 
 let body = document.getElementById('tbody')
+let tabela = document.getElementById('tabela')
+let btn = document.getElementById('btn')
+
+btn.addEventListener('click', (e) => {
+    e.preventDefault()
+    tabela.classList.toggle('invisible')
+})
 
 function criaElemento(){
     let x = 1;
@@ -22,6 +29,8 @@ function criaElemento(){
     tr.innerHTML = `
     <th scope="row">${x}</th>
     <td>${item.nome}</td>
+    <td>${item.sobrenome}</td>
+    <td>${item.idade}</td>
     <td>${item.sobrenome}</td>
     <td>${item.idade}</td>
     `
